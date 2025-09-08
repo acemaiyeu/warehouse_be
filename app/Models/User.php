@@ -47,8 +47,12 @@ class User extends Authenticatable implements JWTSubject
      *
      * @return mixed
      */
-    public function getJWTIdentifier() {
-        return $this->getKey();
+    // public function getJWTIdentifier() {
+    //     return $this->getKey();
+    // }
+    public function getJWTIdentifier()
+    {
+        return (string) $this->id; // hoặc uuid nếu bạn xài uuid
     }
 
     /**
